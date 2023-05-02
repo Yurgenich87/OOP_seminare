@@ -35,7 +35,6 @@ public class StudentSteam implements Iterable<StudentGroup> {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Stream #").append(streamNumber).append("\n");
-		sb.append("Number of groups: ").append(studentGroups.size()).append("\n");
 		for (StudentGroup group : studentGroups) {
 			sb.append(group).append("\n");
 		}
