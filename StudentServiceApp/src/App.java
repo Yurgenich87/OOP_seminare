@@ -66,12 +66,11 @@ public class App {
 		StudentGroup group1 = new StudentGroup(listStud1);
 		StudentGroup group2 = new StudentGroup(listStud2);
 		StudentGroup group3 = new StudentGroup(listStud3);
-
-		// Создаем объект потока и добавляем в него группу
+		// Создание потоков
 		StudentSteam stream1 = new StudentSteam(1);
 		StudentSteam stream2 = new StudentSteam(2);
 		StudentSteam stream3 = new StudentSteam(3);
-
+		// Добавление групп в потоки
 		stream1.addStudentGroup(group1);
 		stream2.addStudentGroup(group2);
 		stream3.addStudentGroup(group3);
@@ -79,6 +78,7 @@ public class App {
 		System.out.println(stream1);
 		System.out.println(stream2);
 		System.out.println(stream3);
+
 		// System.out.println("============= Группа 1 =============");
 		// for (Student stud : group1) {
 		// System.out.println(stud);
