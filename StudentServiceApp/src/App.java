@@ -85,47 +85,41 @@ public class App {
 		stream2.addStudentGroup(group2);
 		stream3.addStudentGroup(group3);
 
-		// System.out.println(stream1);
-		// System.out.println(stream2);
-		// System.out.println(stream3);
+		System.out.println("============= Группа 1 =============");
+		for (Student stud : group1) {
+			System.out.println(stud);
+		}
+		System.out.println("============= Группа 2 =============");
+		for (Student stud : group2) {
+			System.out.println(stud);
+		}
+		System.out.println("============= Группа 3 =============");
+		for (Student stud : group3) {
+			System.out.println(stud);
+		}
 
-		System.out.println(group1.toString());
-		System.out.println(group2.toString());
-		System.out.println(group3.toString());
+		List<StudentGroup> groups = Arrays.asList(group1, group2, group3);
 
-		// System.out.println("============= Группа 1 =============");
-		// for (Student stud : group1) {
-		// System.out.println(stud);
-		// }
-		// System.out.println("============= Группа 2 =============");
-		// for (Student stud : group2) {
-		// System.out.println(stud);
-		// }
-		// System.out.println("============= Группа 3 =============");
-		// for (Student stud : group3) {
-		// System.out.println(stud);
-		// }
+		System.out.println("============= сортировка по количеству студентов =============");
+		groups.stream()
+				.sorted()
+				.forEach(System.out::println);
 
-		// List<StudentGroup> groups = Arrays.asList(group1, group2, group3);
+		System.out.println("============= Сортировка по id группы =============");
 
-		// System.out.println("============= сортировка по количеству студентов
-		// =============");
-		// groups.stream()
-		// .sorted()
-		// .forEach(System.out::println);
+		Comparator.comparingInt(group -> ((StudentGroup) group).getStudents().size());
+		List<StudentGroup> sortedGroups = groups.stream()
+				.sorted(Comparator
+						.comparing(StudentGroup::getId))
+				.collect(Collectors.toList());
 
-		// System.out.println("============= Сортировка по id группы =============");
+		for (StudentGroup group : sortedGroups) {
+			System.out.println(group);
+		}
 
-		// Comparator.comparingInt(group -> ((StudentGroup)
-		// group).getStudents().size());
-		// List<StudentGroup> sortedGroups = groups.stream()
-		// .sorted(Comparator
-		// .comparing(StudentGroup::getId))
-		// .collect(Collectors.toList());
-
-		// for (StudentGroup group : sortedGroups) {
-		// System.out.println(group);
-		// }
+		System.out.println(stream1);
+		System.out.println(stream2);
+		System.out.println(stream3);
 
 		// EmploeeController.paySalary(peron1);
 
