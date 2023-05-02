@@ -2,6 +2,7 @@ package StudentDomen;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup> {
 	private List<Student> students;
@@ -59,7 +60,9 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
 
 	@Override
 	public String toString() {
-		return "Group " + id + " (" + students.size() + " students)\n" + students;
+		String studentsString = students.stream()
+				.map(Object::toString)
+				.collect(Collectors.joining("\n"));
+		return "Группа " + id + " (" + students.size() + " students)\n" + studentsString + "\n";
 	}
-
 }

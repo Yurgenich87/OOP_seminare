@@ -18,8 +18,18 @@ public class App {
 	public static void main(String[] args) throws Exception {
 
 		Emploee peron1 = new Emploee("Иванов", "Олег", 55, 110);
+		Emploee person2 = new Emploee("Петров", "Андрей", 30, 75);
+		Emploee person3 = new Emploee("Сидорова", "Елена", 40, 90);
+		Emploee person4 = new Emploee("Козлов", "Дмитрий", 25, 65);
+		Emploee person5 = new Emploee("Смирнова", "Мария", 35, 80);
 
 		User u1 = new User("Сергей", "Иванов", 25);
+		User u2 = new User("Анна", "Петрова", 30);
+		User u3 = new User("Михаил", "Сидоров", 42);
+		User u4 = new User("Елена", "Кузнецова", 28);
+		User u5 = new User("Дмитрий", "Новиков", 35);
+		User u6 = new User("Ольга", "Васильева", 21);
+
 		Student s1 = new Student("Сергей", "Иванов", 22, (long) 101);
 		Student s2 = new Student("Андрей", "Сидоров", 22, (long) 111);
 		Student s3 = new Student("Иван", "Петров", 22, (long) 121);
@@ -75,9 +85,13 @@ public class App {
 		stream2.addStudentGroup(group2);
 		stream3.addStudentGroup(group3);
 
-		System.out.println(stream1);
-		System.out.println(stream2);
-		System.out.println(stream3);
+		// System.out.println(stream1);
+		// System.out.println(stream2);
+		// System.out.println(stream3);
+
+		System.out.println(group1.toString());
+		System.out.println(group2.toString());
+		System.out.println(group3.toString());
 
 		// System.out.println("============= Группа 1 =============");
 		// for (Student stud : group1) {

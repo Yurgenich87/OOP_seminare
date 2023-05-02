@@ -1,30 +1,30 @@
 package StudentDomen;
 
 public class Teacher extends User {
-    
-    private int teacerId;
-    private String academicDegree;
 
-    public Teacher(String firstName, String secondName, int age, int teacerId, String academicDegree ) {
-        super(firstName, secondName, age);
-       this.teacerId = teacerId;
-       this.academicDegree = academicDegree;
-    }
+	private int teacherId;
+	private String academicDegree;
 
-    public int getTeacerId() {
-        return teacerId;
-    }
+	public Teacher(String firstName, String secondName, int age, int teacherId, String academicDegree) {
+		super(firstName, secondName, age);
+		this.teacherId = teacherId;
+		this.academicDegree = academicDegree;
+	}
 
-    public void setTeacerId(int teacerId) {
-        this.teacerId = teacerId;
-    }
+	public int getTeacerId() {
+		return teacherId;
+	}
 
-    public String getLevel() {
-        return academicDegree;
-    }
+	public void setTeacerId(int teacherId) {
+		this.teacherId = teacherId;
+	}
 
-    public void setLevel(String academicDegree) {
-        this.academicDegree = academicDegree;
-    }
+	public String getLevel() {
+		return academicDegree;
+	}
+
+	public void setLevel(String academicDegree) {
+		this.academicDegree = academicDegree;
+	}
 
 }
