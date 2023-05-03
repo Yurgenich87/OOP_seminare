@@ -18,6 +18,21 @@ public class Student extends User<Student> {
 		this.studentId = studentId;
 	}
 
+	public static void resetCounter() {
+		counter = 1;
+	}
+
+	// @Override
+	// public String toString() {
+	// StringBuilder sb = new StringBuilder();
+	// sb.append(counter++).append(". ");
+	// sb.append("Студент").append(": ");
+	// sb.append(getFirstName()).append(" ");
+	// sb.append(getSecondName()).append(", ");
+	// sb.append("возраст: ").append(getAge());
+	// return sb.toString();
+	// }
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -28,5 +43,4 @@ public class Student extends User<Student> {
 		sb.append("возраст: ").append(getAge());
 		return sb.toString();
 	}
-
 }
