@@ -75,17 +75,25 @@ public class App {
 		System.out.println("============= Отсортировано по имени =============");
 		// Сортировка по именам
 		Collections.sort(listTeacher, new UserComparator<Teacher>());
+
 		for (Teacher teacher : listTeacher) {
 			System.out.println(teacher.toString());
+			// Teacher.resetCounter();
 		}
-		System.out.println("============= Отсортировано по возврасту =============");
+
 		// Сортировка по возврасту
+		System.out.println("============= Отсортировано по возврасту =============");
+
 		Collections.sort(listTeacher, new AgeComparator<Teacher>());
-
+		// Сброс переменной, для начала нумерации с 1
+		Teacher.resetCounter();
 		for (Teacher teacher : listTeacher) {
-			System.out.println(teacher.toString());
+			System.out.println(teacher);
 		}
-
+		// for (StudentGroup group : sortedGroups) {
+		// System.out.println(group);
+		// Student.resetCounter();
+		// }
 		// Создание списка студентов
 		Student s1 = new Student("Василий", "Куприянов", 19, 200);
 		Student s2 = new Student("Анна", "Соколова", 20, 210);

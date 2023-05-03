@@ -3,6 +3,11 @@ package StudentDomen;
 import java.util.Collections;
 import java.util.Comparator;
 
+/**
+ * 
+ * Класс, представляющий преподавателя.
+ */
+
 public class Teacher extends User<Teacher> {
 
 	public static final Comparator TEACHER_COMPARATOR = null;
@@ -16,24 +21,51 @@ public class Teacher extends User<Teacher> {
 		this.academicDegree = academicDegree;
 	}
 
+	/**
+	 * Возвращает идентификатор преподавателя.
+	 * 
+	 * @return идентификатор преподавателя
+	 */
 	public int getTeacherId() {
 		return teacherId;
 	}
 
+	/**
+	 * Устанавливает идентификатор преподавателя.
+	 * 
+	 * @param teacherId идентификатор преподавателя
+	 */
 	public void setTeacherId(int teacherId) {
 		this.teacherId = teacherId;
 	}
 
+	/**
+	 * Возвращает ученую степень преподавателя.
+	 * 
+	 * @return ученая степень преподавателя
+	 */
 	public String getAcademicDegree() {
 		return academicDegree;
 	}
 
+	/**
+	 * Устанавливает ученую степень преподавателя.
+	 * 
+	 * @param academicDegree ученая степень преподавателя
+	 */
 	public void setAcademicDegree(String academicDegree) {
 		this.academicDegree = academicDegree;
 	}
 
 	/**
-	 * 
+	 * Сбрасывает переменную нумерации при смене метода.
+	 */
+
+	public static void resetCounter() {
+		counter = 1;
+	}
+
+	/**
 	 * Переопределение метода toString() для вывода информации о преподавателе.
 	 * 
 	 * @return строка с информацией о преподавателе
