@@ -1,46 +1,50 @@
 package StudentDomen;
 
-public class User {
-    private String firstName;
-    private String secondName;
-    private int age;
+public class User<T> implements Comparable<User<T>> {
 
-    public User(String firstName, String secondName, int age) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.age = age;
-    }
+	private String firstName;
+	private String secondName;
+	private int age;
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public User(String firstName, String secondName, int age) {
+		this.firstName = firstName;
+		this.secondName = secondName;
+		this.age = age;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public String getSecondName() {
-        return secondName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
-    }
+	public String getSecondName() {
+		return secondName;
+	}
 
-    public int getAge() {
-        return age;
-    }
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
+	}
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+	public int getAge() {
+		return age;
+	}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", age=" + age +
-                '}';
-    }
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	@Override
+	public int compareTo(User<T> o) {
+		if (this.age == o.age) {
+			return 0;
+		} else if (this.age < o.age) {
+			return -1;
+		} else {
+			return 1;
+		}
+	}
+
 }

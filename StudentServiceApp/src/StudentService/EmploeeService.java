@@ -6,22 +6,30 @@ import java.util.List;
 import StudentDomen.Emploee;
 import StudentDomen.UserComparator;
 
-public class EmploeeService implements iUserService<Emploee> {
+/**
+ * 
+ * Класс EmploeeService представляет сервис для работы с объектами класса
+ * Emploee.
+ * Реализует интерфейс iUserService<Emploee>.
+ */
+
+public class EmploeeService {
 	private int count;
 	private List<Emploee> emploees;
 
+	/**
+	 * Конструктор класса EmploeeService.
+	 * Создает новый пустой список emploees.
+	 */
 	public EmploeeService() {
 		this.emploees = new ArrayList<Emploee>();
 	}
 
-	@Override
-	public void create(String firstName, String secondName, int age) {
-		Emploee per = new Emploee(firstName, secondName, age, count);
-		count++;
-		emploees.add(per);
-	}
-
-	@Override
+	/**
+	 * Возвращает список всех работников.
+	 *
+	 * @return список всех работников.
+	 */
 	public List<Emploee> getAll() {
 		return emploees;
 	}
@@ -31,4 +39,8 @@ public class EmploeeService implements iUserService<Emploee> {
 		emps.sort(new UserComparator<Emploee>());
 		return emps;
 	}
+
+	public void create(String firstName, String secondName, int age) {
+	}
+
 }

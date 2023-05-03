@@ -1,47 +1,32 @@
 package StudentDomen;
 
-public class Student extends User implements Comparable<Student> {
-	private long studentID;
+public class Student extends User<Student> {
 
-	public Student(String firstName, String secondName, int age, long studentID) {
+	private int studentId;
+	private static int counter = 1;
+
+	public Student(String firstName, String secondName, int age, int studentId) {
 		super(firstName, secondName, age);
-		this.studentID = studentID;
+		this.studentId = studentId;
 	}
 
-	public long getStudentID() {
-		return studentID;
+	public int getStudentId() {
+		return studentId;
 	}
 
-	public void setStudentID(long studentID) {
-		this.studentID = studentID;
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
 	}
 
 	@Override
 	public String toString() {
-		return "Студент: " +
-				getFirstName() + " " +
-				getSecondName() +
-				", возвраст = " + getAge() +
-				", studentID = " + studentID +
-				'}';
+		StringBuilder sb = new StringBuilder();
+		sb.append(counter++).append(". ");
+		sb.append("Студент").append(": ");
+		sb.append(getFirstName()).append(" ");
+		sb.append(getSecondName()).append(", ");
+		sb.append("возраст: ").append(getAge());
+		return sb.toString();
 	}
 
-	@Override
-	public int compareTo(Student o) {
-
-		System.out.println(super.getFirstName() + " - " + o.getFirstName());
-		if (super.getAge() == o.getAge()) {
-			if (this.studentID == o.studentID) {
-				return 0;
-			}
-			if (this.studentID < o.studentID) {
-				return -1;
-			}
-			return 1;
-		}
-		if (super.getAge() < o.getAge()) {
-			return -1;
-		}
-		return 1;
-	}
 }

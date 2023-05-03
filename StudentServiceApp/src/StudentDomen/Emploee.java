@@ -1,44 +1,47 @@
 package StudentDomen;
 
-/**
- * Класс, представляющий работника.
- */
-public class Emploee extends User {
+public class Emploee extends User<Emploee> {
 
-	/**
-	 * Идентификатор работника.
-	 */
-	private int empId;
+	private int emploeeId;
+	private double salary;
+	private static int counter = 1;
 
-	/**
-	 * Создает нового работника.
-	 * 
-	 * @param firstName  имя работника.
-	 * @param secondName фамилия работника.
-	 * @param age        возраст работника.
-	 * @param empId      идентификатор работника.
-	 */
-	public Emploee(String firstName, String secondName, int age, int empId) {
+	public Emploee(String firstName, String secondName, int age, int emploeeId, double salary) {
 		super(firstName, secondName, age);
-		this.empId = empId;
+		this.emploeeId = emploeeId;
+		this.salary = salary;
+	}
+
+	public int getEmployeeId() {
+		return emploeeId;
+	}
+
+	public void setEmployeeId(int emploeeId) {
+		this.emploeeId = emploeeId;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
 	}
 
 	/**
-	 * Получает идентификатор работника.
 	 * 
-	 * @return идентификатор работника.
-	 */
-	public int getEmpId() {
-		return empId;
-	}
-
-	/**
-	 * Устанавливает идентификатор работника.
+	 * Переопределение метода toString() для вывода информации о преподавателе.
 	 * 
-	 * @param empId идентификатор работника.
+	 * @return строка с информацией о преподавателе
 	 */
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(counter++).append(". ");
+		sb.append("Работник").append(": ");
+		sb.append(getFirstName()).append(" ");
+		sb.append(getSecondName()).append(", ");
+		sb.append("возраст: ").append(getAge());
+		return sb.toString();
 	}
-
 }
